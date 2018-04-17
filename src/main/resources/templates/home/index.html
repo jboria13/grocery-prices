@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragment :: head"></head>
+<body class="container">
+    <h1 th:text="${title}"></h1>
+
+    <span th:text="'Welcome ' + ${session.mySession}"></span>
+
+    <form method="post" style="max-width:600px;" >
+        <input type="submit" value="Logout" />
+    </form>
+
+</body>
+</html>
