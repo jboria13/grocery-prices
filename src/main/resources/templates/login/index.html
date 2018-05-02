@@ -2,7 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragment :: head"></head>
 <body class="container">
-<h1 th:text="${title}"></h1>
+
+<div class="login">
+
+    <h1 th:replace="fragment :: h1"></h1>
 
 <form method="post" style="max-width:600px;" th:object="${login}">
     <div class="form-group">
@@ -18,10 +21,9 @@
     </div>
 
 
-    <input type="submit" value="Login" />
+    <input type="submit" value="Login" class="btn btn-green" />
 </form>
-
-<a href="/signup">Don't have an account? Sign Up Here!</a>
-
+<a href="/signup" >Don't have an account? Sign Up Here!</a>
+</div>
 </body>
 </html>

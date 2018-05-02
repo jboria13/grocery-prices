@@ -11,10 +11,10 @@ public class Account {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int accountId;
 
     @NotNull
-    @Size(min=3, max=20, message = "Invalid Username")
+    @Size(min=3, message = "Invalid Username")
     private String username;
 
     @NotNull
@@ -41,7 +41,9 @@ public class Account {
 
     public void setPassword(String password) {        this.password = password;    }
 
-    public int getId() {        return id;    }
+    public int getAccountId() {
+        return accountId;
+    }
 
     public String getConfirmPassword() {        return confirmPassword;    }
 

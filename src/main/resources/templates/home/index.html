@@ -2,13 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragment :: head"></head>
 <body class="container">
-    <h1 th:text="${title}"></h1>
+<div th:replace="fragment :: logout"></div>
 
-    <span th:text="'Welcome ' + ${session.mySession}"></span>
+<h1 th:replace="fragment :: h1"></h1>
 
-    <form method="post" style="max-width:600px;" >
-        <input type="submit" value="Logout" />
-    </form>
+<table class="table table-bordered table-hover table-sm table-background table-striped h1-font">
+
+    <tr th:if="${lists} and ${lists.size()}">
+        <thead class="thead">
+        <th>My Shopping List</th>
+        </thead>
+    </tr>
+
+    <tr th:if="${lists}" th:each="list : ${lists}">
+        <td >
+            <a th:href="'/shoppinglist/view/' + ${list.shoppingListId}" th:text="${list.shoppingListName}"></a>
+        </td>
+
+    </tr>
+
+</table>
+
+    <nav th:replace="fragment :: navigation"></nav>
+
 
 </body>
 </html>

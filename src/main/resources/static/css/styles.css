@@ -1,0 +1,52 @@
+.login{
+    position:absolute;
+     margin: auto;
+     top: 15%;
+     right: 0;
+     bottom: 15%;
+     left: 0;
+        width: 50%;
+                padding: 100px;
+}
+
+.btn-orange{
+    background-color:    #f8c471   ;
+    color: #000000 ;
+    font-family: futura;
+
+}
+
+.btn-green{
+    background-color:   #7dcea0  ;
+    color: #000000 ;
+    font-family: futura;
+
+}
+
+body{
+    background-color:  #aab7b8;
+}
+
+.table-background{
+     background-color: #e5e7e9;
+}
+.table-border{
+    width:
+}
+
+.h1-font{
+        font-family: futura;
+}
+
+#map {
+        width: 50%;
+        height: 300px;
+         top: 15%;
+         right: 0;
+         bottom: 15%;
+         left: 0;
+         padding: 100px;
+     margin: auto;
+
+        background-color: grey;
+      }

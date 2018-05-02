@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Login {
+
     @NotNull
     @Size(min=3, max=20, message = "Invalid Username")
     private String loginName;

@@ -32,7 +32,7 @@ public class LoginController {
     private AccountDAO accountDAO;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String displayLoginForm(Model model, HttpServletRequest request, HttpServletResponse response) {
+    public String displayLoginForm(Model model) {
         model.addAttribute("title", "Login");
         model.addAttribute(new Login());
 
@@ -40,7 +40,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String processLoginForm(@ModelAttribute @Valid Login login, HttpSession session, Errors errors, Model model) {
+    public String processLoginForm(@ModelAttribute @Valid Login login, Errors errors, HttpSession session,  Model model) {
 
         if (errors.hasErrors()) {
 
@@ -60,7 +60,7 @@ public class LoginController {
             return "login/index";
         }
 
-        session.setAttribute("mySession", login.getLoginName());
+        session.setAttribute("mySession", validAccount.getUsername());
 
         return "redirect:/home";
 

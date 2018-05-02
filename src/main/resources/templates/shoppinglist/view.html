@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragment :: head"></head>
+<body class="container">
+<div th:replace="fragment :: logout"></div>
+
+
+<h1 th:replace="fragment :: h1"></h1>
+
+<div>
+    <h3 th:unless="${items} and ${items.size()}">This list is currently empty!</h3>
+</div>
+
+
+<table class="table table-bordered table-hover table-sm table-background table-striped h1-font">
+
+    <tr th:if="${items} and ${items.size()}">
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Department</th>
+        <th>Store</th>
+        <th>Remove</th>
+
+    </tr>
+
+    <tr th:if="${items}" th:each="item : ${items}">
+        <td th:text="${item.itemName}"></td>
+        <td th:text="${item.brand}"></td>
+        <td th:text="${item.price}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.department.departmentName}"></td>
+        <td th:text="${item.store.storeName}"></td>
+        <td><input type="checkbox" name="removeItemIds" th:value="${item.itemId}" th:id$="${item.itemId}"></td>
+
+
+    </tr>
+
+</table>
+
+<a th:href="'/shoppinglist/add-item/' + ${shoppingListId}" class="btn btn-green">Add To List</a>
+<br/>
+<br>
+
+
+<nav th:replace="fragment :: navigation"></nav>
+
+
+</body>
+</html>

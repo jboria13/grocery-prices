@@ -5,6 +5,7 @@ import com.example.groceryprices.models.data.AccountDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +31,7 @@ public class SignupController {
     }
 
     @RequestMapping(value="", method = RequestMethod.POST)
-    public String processSignupForm(@ModelAttribute @Valid Account newAccount, HttpSession session, Errors errors, Model model){
+    public String processSignupForm(@ModelAttribute @Valid Account newAccount, Errors errors, HttpSession session, Model model){
 
         if (errors.hasErrors()) {
 
@@ -51,7 +52,6 @@ public class SignupController {
 
             return "signup/index";
         }
-
 
     }
 }

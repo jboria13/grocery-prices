@@ -2,6 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragment :: head"></head>
 <body class="container">
+
+<div class="login">
 <h1 th:text="${title}"></h1>
 
 <form method="post" style="max-width:600px;" th:object="${account}">
@@ -24,10 +26,10 @@
     </div>
 
 
-    <input type="submit" value="Sign Up" />
+    <input type="submit" value="Sign Up" class="btn btn-green"/>
 </form>
 
 <a href="/login">Already have an account? Login Here!</a>
-
+</div>
 </body>
 </html>
